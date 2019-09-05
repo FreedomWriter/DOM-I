@@ -45,7 +45,18 @@ let links = document.querySelectorAll("a");
 
 links.forEach((link, i) => {
   link.textContent = siteContent.nav[`nav-item-${i+1}`]
+  link.style.color = 'green';
 })
+let prependNav = document.createElement("a").textContent = 'Prepend';
+let appendNav = document.createElement("a");
+let appendNavChild = document.createTextNode("AppendChild");
+appendNav.appendChild(appendNavChild);
+// console.log(appendNav);
+let navTag = document.querySelector("nav");
+navTag.style.color = 'green';
+navTag.prepend(prependNav);
+navTag.appendChild(appendNav).style.color = 'green';
+
 
 let ctaText = document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
 let ctaBttn = document.querySelector(".cta-text button").textContent = siteContent.cta.button;
