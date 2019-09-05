@@ -51,7 +51,6 @@ let prependNav = document.createElement("a").textContent = 'Prepend';
 let appendNav = document.createElement("a");
 let appendNavChild = document.createTextNode("AppendChild");
 appendNav.appendChild(appendNavChild);
-// console.log(appendNav);
 let navTag = document.querySelector("nav");
 navTag.style.color = 'green';
 navTag.prepend(prependNav);
@@ -62,15 +61,13 @@ let ctaText = document.querySelector(".cta-text h1").textContent = siteContent.c
 let breaks = "<h1>DOM<br>Is<br>Awesome!";
 document.querySelector(".cta-text h1").innerHTML = breaks;
 
-// let domTextLayout = document.createElement("h1");
-// domTextLayout.id = "newLayout";
-// let domTextLayout_content = document.createTextNode(`DOM` <span><br></br></span> `Is` <br> `Awesome!`)
-// domTextLayout.appendChild(domTextLayout_content);
-// let dMT2 = document.querySelector(".cta-text h1");
-// let parentDiv = dMT2.parentNode;
-// parentDiv.replaceChild(domTextLayout, dMT2);
-
 let ctaBttn = document.querySelector(".cta-text button").textContent = siteContent.cta.button;
+
+let bttnClick = document.querySelector(".cta-text button").addEventListener('click', function(eventObject){
+  let newBreaks = "<h1>But Not<br>As Awesome<br>As You Are!"
+  document.querySelector(".cta-text h1").innerHTML = newBreaks;
+ });
+
 let codeSnipTop = document.getElementById("cta-img").setAttribute('src', siteContent.cta["img-src"]);
 
 let contentHeaders = document.querySelectorAll("h4");
@@ -96,5 +93,4 @@ contactText[1].textContent = siteContent["contact"]["phone"];
 contactText[2].textContent = siteContent["contact"]["email"];
 
 let copyright = document.querySelector("footer p").textContent = siteContent.footer.copyright;
-// console.log(copyright);
 
