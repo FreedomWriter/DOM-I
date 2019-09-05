@@ -39,4 +39,40 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let links = document.querySelectorAll("a");
+
+links.forEach((link, i) => {
+  link.textContent = siteContent.nav[`nav-item-${i+1}`]
+})
+
+let ctaText = document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
+let ctaBttn = document.querySelector(".cta-text button").textContent = siteContent.cta.button;
+let codeSnipTop = document.getElementById("cta-img").setAttribute('src', siteContent.cta["img-src"]);
+
+let contentHeaders = document.querySelectorAll("h4");
+contentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+contentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+contentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+contentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+contentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+contentHeaders[5].textContent = siteContent["contact"]["contact-h4"];
+
+let contentText = document.querySelectorAll(".text-content p");
+contentText[0].textContent = siteContent["main-content"]["features-content"];
+contentText[1].textContent = siteContent["main-content"]["about-content"];
+contentText[2].textContent = siteContent["main-content"]["services-content"];
+contentText[3].textContent = siteContent["main-content"]["product-content"];
+contentText[4].textContent = siteContent["main-content"]["vision-content"];
+
+let codeSnipBtm = document.getElementById("middle-img").setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let contactText = document.querySelectorAll(".contact p");
+contactText[0].textContent = siteContent["contact"]["address"];
+contactText[1].textContent = siteContent["contact"]["phone"];
+contactText[2].textContent = siteContent["contact"]["email"];
+
+let copyright = document.querySelector("footer p").textContent = siteContent.footer.copyright;
+console.log(copyright);
+
