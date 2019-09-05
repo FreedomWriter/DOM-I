@@ -59,6 +59,17 @@ navTag.appendChild(appendNav).style.color = 'green';
 
 
 let ctaText = document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
+let breaks = "<h1>DOM<br>Is<br>Awesome!";
+document.querySelector(".cta-text h1").innerHTML = breaks;
+
+// let domTextLayout = document.createElement("h1");
+// domTextLayout.id = "newLayout";
+// let domTextLayout_content = document.createTextNode(`DOM` <span><br></br></span> `Is` <br> `Awesome!`)
+// domTextLayout.appendChild(domTextLayout_content);
+// let dMT2 = document.querySelector(".cta-text h1");
+// let parentDiv = dMT2.parentNode;
+// parentDiv.replaceChild(domTextLayout, dMT2);
+
 let ctaBttn = document.querySelector(".cta-text button").textContent = siteContent.cta.button;
 let codeSnipTop = document.getElementById("cta-img").setAttribute('src', siteContent.cta["img-src"]);
 
@@ -85,5 +96,5 @@ contactText[1].textContent = siteContent["contact"]["phone"];
 contactText[2].textContent = siteContent["contact"]["email"];
 
 let copyright = document.querySelector("footer p").textContent = siteContent.footer.copyright;
-console.log(copyright);
+// console.log(copyright);
 
