@@ -58,15 +58,28 @@ navTag.appendChild(appendNav).style.color = 'green';
 
 
 let ctaText = document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
-let breaks = "<h1>DOM<br>Is<br>Awesome!";
-document.querySelector(".cta-text h1").innerHTML = breaks;
+let breaks = "DOM\nIs\nAwesome!";
+document.querySelector(".cta-text h1").innerText = breaks;
 
 let ctaBttn = document.querySelector(".cta-text button").textContent = siteContent.cta.button;
 
+
 let bttnClick = document.querySelector(".cta-text button").addEventListener('click', function(eventObject){
-  let newBreaks = "<h1>But Not<br>As Awesome<br>As You Are!"
-  document.querySelector(".cta-text h1").innerHTML = newBreaks;
+  // let newBreaks = "But Not\nAs Awesome\nAs You Are!"
+  // document.querySelector(".cta-text h1").innerText = newBreaks;
+  function change (){
+    let newBreaks = "<h1>But Not<br>As Awesome<br>As You Are!"
+    document.querySelector(".cta-text h1").innerHTML = newBreaks;
+    setTimeout ( "reset()", 3000 );
+   }
+   change();
  });
+ function reset (){
+  let breaks = "DOM\nIs\nAwesome!";
+  document.querySelector(".cta-text h1").innerText = breaks;
+  
+ }
+
 
 let codeSnipTop = document.getElementById("cta-img").setAttribute('src', siteContent.cta["img-src"]);
 
