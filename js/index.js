@@ -40,13 +40,15 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
-
+//adding links
 let links = document.querySelectorAll("a");
 
 links.forEach((link, i) => {
   link.textContent = siteContent.nav[`nav-item-${i+1}`]
   link.style.color = 'green';
-})
+});
+
+//prepending and appending a child
 let prependNav = document.createElement("a").textContent = 'Prepend';
 let appendNav = document.createElement("a");
 let appendNavChild = document.createTextNode("AppendChild");
@@ -56,19 +58,20 @@ navTag.style.color = 'green';
 navTag.prepend(prependNav);
 navTag.appendChild(appendNav).style.color = 'green';
 
-
+//h1 adding and formatting
 let ctaText = document.querySelector(".cta-text h1").textContent = siteContent.cta.h1;
 let breaks = "DOM\nIs\nAwesome!";
 document.querySelector(".cta-text h1").innerText = breaks;
 
-let ctaBttn = document.querySelector(".cta-text button").textContent = siteContent.cta.button;
+//adding button
+let ctaBttn = document.querySelector(".cta-text button");
+ctaBttn.textContent = siteContent.cta.button;
 
-
+//adding event to button (stretch)
 let bttnClick = document.querySelector(".cta-text button").addEventListener('click', function(eventObject){
-  // let newBreaks = "But Not\nAs Awesome\nAs You Are!"
-  // document.querySelector(".cta-text h1").innerText = newBreaks;
   function change (){
     let newBreaks = "<h1>But Not<br>As Awesome<br>As You Are!"
+    document.querySelector(".cta-text h1").style.color = 'hotpink';
     document.querySelector(".cta-text h1").innerHTML = newBreaks;
     setTimeout ( "reset()", 3000 );
    }
@@ -76,13 +79,14 @@ let bttnClick = document.querySelector(".cta-text button").addEventListener('cli
  });
  function reset (){
   let breaks = "DOM\nIs\nAwesome!";
+  document.querySelector(".cta-text h1").style.color = 'black';
   document.querySelector(".cta-text h1").innerText = breaks;
-  
  }
 
-
+//adding image to top part of page
 let codeSnipTop = document.getElementById("cta-img").setAttribute('src', siteContent.cta["img-src"]);
 
+//adding text and formatting to h4's
 let contentHeaders = document.querySelectorAll("h4");
 contentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
 contentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
@@ -91,6 +95,7 @@ contentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
 contentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
 contentHeaders[5].textContent = siteContent["contact"]["contact-h4"];
 
+//adding text and formatting to <p> tags
 let contentText = document.querySelectorAll(".text-content p");
 contentText[0].textContent = siteContent["main-content"]["features-content"];
 contentText[1].textContent = siteContent["main-content"]["about-content"];
@@ -98,12 +103,30 @@ contentText[2].textContent = siteContent["main-content"]["services-content"];
 contentText[3].textContent = siteContent["main-content"]["product-content"];
 contentText[4].textContent = siteContent["main-content"]["vision-content"];
 
-let codeSnipBtm = document.getElementById("middle-img").setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+//adding image in middle content
+let codeSnipBtm = document.getElementById("middle-img");
+codeSnipBtm.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+//adding contact informtion
 let contactText = document.querySelectorAll(".contact p");
 contactText[0].textContent = siteContent["contact"]["address"];
 contactText[1].textContent = siteContent["contact"]["phone"];
 contactText[2].textContent = siteContent["contact"]["email"];
 
+
+//adding copyright
 let copyright = document.querySelector("footer p").textContent = siteContent.footer.copyright;
+
+//updating styles stretch
+
+//change background color
+let container = document.querySelector('.container');
+container.style.backgroundColor = '#e9f7f5';
+container.style.padding = '2%';
+ctaBttn.style.backgroundColor = '#d5dff2';
+codeSnipBtm.style.width = '100%';
+
+
+
 
